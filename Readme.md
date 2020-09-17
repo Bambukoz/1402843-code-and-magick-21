@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Алексей Ежов](https://up.htmlacademy.ru/javascript/21/user/1402843).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Шершнев](https://htmlacademy.ru/profile/shv_sergey).
 
 ---
 
