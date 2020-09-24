@@ -5,24 +5,26 @@ const SECOND_NAMES = [`да Марья`, `Верон`, `Мирабелла`, `В
 const COAT_COLORS = [`rgb(101, 137, 164)`, `rgb(241, 43, 107)`, `rgb(146, 100, 161)`, `rgb(56, 159, 117)`, `rgb(215, 210, 55)`, `rgb(0, 0, 0)`];
 const EYE_COLORS = [`black`, `red`, `blue`, `yellow`, `green`];
 const setup = document.querySelector(`.setup`);
-const wizards = [];
 
 const removeHiddenClass = () => {
   setup.classList.remove(`hidden`);
 };
 removeHiddenClass();
 
-const getRandomNumber = (max) => {
-  return Math.floor(Math.random() * max);
+const getRandomNumber = (arr) => {
+  return arr[Math.floor(Math.random() * arr.length)];
 };
 
 const getRandomWizards = (quantity) => {
+  const wizards = [];
   for (let i = 0; i < quantity; i++) {
-    const randomWizard = {};
-    randomWizard.name = `${NAMES[getRandomNumber(NAMES.length)]} ${SECOND_NAMES[getRandomNumber(SECOND_NAMES.length)]}`;
-    randomWizard.coatColor = COAT_COLORS[getRandomNumber(COAT_COLORS.length)];
-    randomWizard.eyesColor = EYE_COLORS[getRandomNumber(EYE_COLORS.length)];
-    wizards.push(randomWizard);
+    wizards.push(
+        {
+          name: `${getRandomNumber(NAMES)} ${getRandomNumber(SECOND_NAMES)}`,
+          coatColor: getRandomNumber(COAT_COLORS),
+          eyesColor: getRandomNumber(EYE_COLORS)
+        }
+    );
   }
   return wizards;
 };
@@ -39,11 +41,10 @@ const renderWizard = (arr) => {
 };
 
 const getFragment = (quantity) => {
-  getRandomWizards(quantity);
   const fragment = document.createDocumentFragment();
   const similarList = setup.querySelector(`.setup-similar-list`);
-  for (let i = 0; i < wizards.length; i++) {
-    fragment.appendChild(renderWizard(wizards[i]));
+  for (let i = 0; i < quantity; i++) {
+    fragment.appendChild(renderWizard(getRandomWizards(quantity)[i]));
     similarList.appendChild(fragment);
   }
 };
