@@ -36,15 +36,15 @@ const renderWizard = (obj) => {
   return wizard;
 };
 
-const createFragment = (quantity) => {
+const createFragment = (wizards) => {
   const fragment = document.createDocumentFragment();
   const similarList = setup.querySelector(`.setup-similar-list`);
-  const wizardsArr = getRandomWizards(quantity);
-  for (let i = 0; i < quantity; i++) {
-    fragment.appendChild(renderWizard(wizardsArr[i]));
+
+  for (let wizard of wizards) {
+    fragment.appendChild(renderWizard(wizard));
   }
   similarList.appendChild(fragment);
 };
 
-createFragment(WIZARDS_AMOUNT);
+createFragment(getRandomWizards(WIZARDS_AMOUNT));
 setup.querySelector(`.setup-similar`).classList.remove(`hidden`);
