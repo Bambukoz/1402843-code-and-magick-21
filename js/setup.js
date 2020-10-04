@@ -22,7 +22,7 @@ const onPopupEscPress = (evt) => {
 };
 
 const popupOpen = () => {
-  setup.classList.remove(`hidden`)
+  setup.classList.remove(`hidden`);
   document.addEventListener(`keydown`, onPopupEscPress);
   wizardCoat.addEventListener(`click`, onCoatClick);
   wizardEyes.addEventListener(`click`, onEyesClick);
@@ -30,7 +30,7 @@ const popupOpen = () => {
 };
 
 const popupClose = () => {
-  setup.classList.add(`hidden`)
+  setup.classList.add(`hidden`);
   document.removeEventListener(`keydown`, onPopupEscPress);
   wizardCoat.removeEventListener(`click`, onCoatClick);
   wizardEyes.removeEventListener(`click`, onEyesClick);
