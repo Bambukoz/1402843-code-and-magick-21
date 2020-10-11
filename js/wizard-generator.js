@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+  const WIZARDS_AMOUNT = 4;
   const setup = document.querySelector(`.setup`);
   const NAMES = [`Иван`, `Хуан Себастьян`, `Мария`, `Кристоф`, `Виктор`, `Юлия`, `Люпита`, `Вашингтон`];
   const SECOND_NAMES = [`да Марья`, `Верон`, `Мирабелла`, `Вальц`, `Онопко`, `Топольницкая`, `Нионго`, `Ирвинг`];
@@ -12,7 +13,7 @@
     for (let i = 0; i < quantity; i++) {
       wizards.push({
         name: `${window.util.getRandomNumber(NAMES)} ${window.util.getRandomNumber(SECOND_NAMES)}`,
-        coatColor: window.util.getRandomNumber(window.colorize.COAT_COLORS),
+        coatColor: window.util.getRandomNumber(window.colorizse.COAT_COLORS),
         eyesColor: window.util.getRandomNumber(window.colorize.EYES_COLORS)
       });
     }
@@ -36,9 +37,5 @@
     similarList.appendChild(fragment);
   };
 
-  window.wizardGenerator = {
-    similarList,
-    createFragment,
-    getRandomWizards
-  };
+  createFragment(getRandomWizards(WIZARDS_AMOUNT));
 })();
