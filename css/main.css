@@ -1042,3 +1042,45 @@ input[type=radio]:checked + .review-mark-label
 
     opacity: 0;
 }
+
+.popup-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #da641a;
+  border: 8px solid #1cb34d;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, .25);
+  padding: 20px;
+  z-index: 9999;
+  overflow: scroll;
+}
+
+.popup-error__hidden {
+  display: none;
+}
+
+.popup-error__title {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.popup-error__text {
+  min-height: 23px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.popup-error__button {
+  width: 200px;
+  min-height: 55px;
+  background-color: #1cb34d;
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+}

@@ -4,8 +4,8 @@
 
   const setup = document.querySelector(`.setup`);
   const setupOpen = document.querySelector(`.setup-open`);
+  const form = setup.querySelector(`.setup-wizard-form`);
   const setupClose = setup.querySelector(`.setup-close`);
-  const setupSimilar = setup.querySelector(`.setup-similar`);
   const userName = setup.querySelector(`.setup-user-name`);
   const setupPlayer = setup.querySelector(`.setup-player`);
 
@@ -13,7 +13,8 @@
     setup.classList.remove(`hidden`);
     document.addEventListener(`keydown`, window.util.onPopupEscPress);
     setupPlayer.addEventListener(`click`, window.colorize.onElementClick);
-    setupSimilar.classList.remove(`hidden`);
+    window.wizardGenerator.addWizardsToSimilarList();
+    form.addEventListener(`submit`, onFormSubmit);
   };
 
   const onCloseBtnClick = () => {
@@ -23,11 +24,18 @@
       setup.style.left = ``;
       document.removeEventListener(`keydown`, window.util.onPopupEscPress);
       setupPlayer.removeEventListener(`click`, window.colorize.onElementClick);
+      form.removeEventListener(`submit`, onFormSubmit);
     }
   };
 
   setupOpen.addEventListener(`click`, onOpenBtnClick);
   setupClose.addEventListener(`click`, onCloseBtnClick);
+
+
+  const onFormSubmit = (evt) => {
+    evt.preventDefault();
+    window.backend.upload(new FormData(form), onCloseBtnClick, window.error.onLoadError);
+  };
 
   window.setup = {
     onCloseBtnClick
