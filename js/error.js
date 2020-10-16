@@ -13,12 +13,10 @@
   const onLoadError = (errorMessage) => {
     errorText.textContent = errorMessage;
     popupError.classList.remove(`popup-error__hidden`);
-
     errorButton.addEventListener(`click`, onErrorButtonClick);
   };
 
   window.error = {
-    onErrorButtonClick,
     onLoadError
   };
 
