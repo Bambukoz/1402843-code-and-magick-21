@@ -47,12 +47,12 @@
     sendRequest(`GET`, onLoad, onError, URL_GET);
   };
 
-  const upload = (data, onLoad, onError) => {
+  const save = (data, onLoad, onError) => {
     sendRequest(`POST`, onLoad, onError, URL_POST, data);
   };
 
   window.backend = {
     load,
-    upload
+    save
   };
 })();

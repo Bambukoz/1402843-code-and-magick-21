@@ -34,7 +34,7 @@
 
   const onFormSubmit = (evt) => {
     evt.preventDefault();
-    window.backend.upload(new FormData(form), onCloseBtnClick, window.error.onLoadError);
+    window.backend.save(new FormData(form), onCloseBtnClick, window.error.onLoadError);
   };
 
   window.setup = {
