@@ -13,5 +13,5 @@
 
   window.debounce = {
     setDebounce
-  }
+  };
 })();
