@@ -1,7 +1,6 @@
 'use strict';
 
 (function () {
-
   const setup = document.querySelector(`.setup`);
   const setupOpen = document.querySelector(`.setup-open`);
   const form = setup.querySelector(`.setup-wizard-form`);

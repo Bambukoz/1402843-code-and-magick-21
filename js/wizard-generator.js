@@ -15,24 +15,23 @@
     return wizardElement;
   };
 
-  const shuffleWizards = (wizards) => wizards.sort(() => Math.random() - 0.5);
-
   const createFragment = (wizards) => {
     const fragment = document.createDocumentFragment();
     const minWizardsAmount = Math.min(wizards.length, WIZARDS_AMOUNT);
-    shuffleWizards(wizards);
     for (let i = 0; i < minWizardsAmount; i++) {
       fragment.appendChild(getRenderWizard(wizards[i]));
     }
+    similarList.textContent = ``;
     similarList.appendChild(fragment);
   };
 
   const addWizardsToSimilarList = () => {
-    window.backend.load(createFragment, window.error.onLoadError);
+    window.backend.load(window.filter.successLoadHandler, window.error.onLoadError);
     setupSimilar.classList.remove(`hidden`);
   };
 
   window.wizardGenerator = {
+    createFragment,
     addWizardsToSimilarList
   };
 })();

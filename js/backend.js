@@ -24,7 +24,7 @@
     }
   };
 
-  const sendRequest = (methodType, onLoad, onError, url, data) => {
+  const sendRequest = (methodType, onLoad, onError, url, data = null) => {
     const request = new XMLHttpRequest();
     request.timeout = TIMEOUT;
     if (methodType === `GET`) {
@@ -36,11 +36,7 @@
     request.addEventListener(`timeout`, () => onError(`Время ожидания ответа от сервера превысило ${TIMEOUT / 1000} секунд`));
 
     request.open(methodType, url);
-    if (data) {
-      request.send(data);
-    } else {
-      request.send();
-    }
+    request.send(data);
   };
 
   const load = (onLoad, onError) => {
