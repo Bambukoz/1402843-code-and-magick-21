@@ -22,10 +22,14 @@
       const colorValue = window.util.getRandomNumber(COAT_COLORS);
       wizardCoat.style.fill = colorValue;
       inputCoatColor.value = colorValue;
+      window.coatColor = colorValue;
+      window.debounce.setDebounce(window.filter.updateWizards);
     } else {
       const colorValue = window.util.getRandomNumber(EYES_COLORS);
       wizardEyes.style.fill = colorValue;
       inputEyesColor.value = colorValue;
+      window.eyesColor = colorValue;
+      window.debounce.setDebounce(window.filter.updateWizards);
     }
   };
 
