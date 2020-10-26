@@ -6,7 +6,7 @@ const FileTypes = {
   JPEG: `image/jpeg`
 };
 const upload = document.querySelector(`.upload`);
-const fileCooser = upload.querySelector(`.upload input[type=file]`);
+const fileCooser = upload.querySelector(`input[type=file]`);
 const userPic = upload.querySelector(`.setup-user-pic`);
 
 const onUserPicChange = () => {
