@@ -7,6 +7,7 @@ module.exports = {
     `./js/debounce.js`,
     `./js/filter.js`,
     `./js/backend.js`,
+    `./js/avatar.js`,
     `./js/setup.js`,
     `./js/error.js`,
     `./js/colorize.js`,

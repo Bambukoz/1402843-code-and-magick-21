@@ -3,7 +3,7 @@
 const URL_GET = `https://21.javascript.pages.academy/code-and-magick/data`;
 const URL_POST = `https://21.javascript.pages.academy/code-and-magick`;
 
-const TIMEOUT = 5000;
+const TIMEOUT = 10000;
 const Code = {
   SUCCESS: 200,
 };
