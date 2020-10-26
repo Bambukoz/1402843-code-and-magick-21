@@ -23,6 +23,6 @@ const onUserPicChange = () => {
   }
 };
 
-fileCooser.addEventListener(`change`, onUserPicChange);
+fileChooser.addEventListener(`change`, onUserPicChange);
 
 
